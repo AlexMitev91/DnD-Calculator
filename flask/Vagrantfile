@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "dndroller" do |dndroller|
+    dndroller.vm.box= "generic/debian11"
+    dndroller.vm.hostname = "dndroller.lab"
+    dndroller.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "2048"]
+	  end
+    dndroller.vm.network "private_network", ip: "192.168.111.202"
+    dndroller.vm.network "forwarded_port", guest: 8080, host: 8081
+    dndroller.vm.provision "shell", path: "shared-files/install_common.sh"
+    dndroller.vm.provision "shell", path: "shared-files/docker/docker.sh"
+    dndroller.vm.synced_folder "shared-files/app", "/vagrant"
+  end
+end

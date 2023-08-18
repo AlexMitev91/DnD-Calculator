@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roll Statistics</title>
+</head>
+<body>
+    <h1>Dice Roller</h1>
+
+    <form action="/" method="post">
+        <label for="rolls">Enter the number of rolls:</label>
+        <input type="number" id="rolls" name="rolls" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+    <div style="width:200px;overflow:auto"></div>
+    <pre>
+        Out of {{ result.rolls }} rolls with advantage:
+        Natural 20s = {{ result.adv_crit }} ({{ '%.2f'|format(result.percentage_adv_crit) }}%)
+        Natural 1s = {{ result.adv_fail }} ({{ '%.2f'|format(result.percentage_adv_fail) }}%)
+        Average roll was {{ '%.2f'|format(result.avg_adv) }}
+
+        Out of {{ result.rolls }} rolls with disadvantage:
+        Natural 20s = {{ result.dis_crit }} ({{ '%.2f'|format(result.percentage_dis_crit) }}%)
+        Natural 1s = {{ result.dis_fail }} ({{ '%.2f'|format(result.percentage_dis_fail) }}%)
+        Average roll was {{ '%.2f'|format(result.avg_diss) }}
+
+        Out of {{ result.rolls }} normal rolls:
+        Natural 20s = {{ result.norm_crit }} ({{ '%.2f'|format(result.percentage_norm_crit) }}%)
+        Natural 1s = {{ result.norm_fail }} ({{ '%.2f'|format(result.percentage_norm_fail) }}%)
+        Average roll was {{ '%.2f'|format(result.avg_norm) }}
+    </pre>
+    </div>
+    {% endif %}
+</body>
+</html>
