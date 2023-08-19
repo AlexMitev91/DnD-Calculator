@@ -42,3 +42,7 @@ curl -SL https://github.com/docker/compose/releases/download/v2.2.3/docker-compo
 echo "* Correcting permissions to make Docker Compose executable"
 
 chmod +x ~/.docker/cli-plugins/docker-compose
+
+#Start the application using Docker-Compose#
+
+docker compose -f /vagrant/docker-compose.yaml up -d
