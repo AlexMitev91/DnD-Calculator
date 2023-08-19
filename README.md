@@ -40,6 +40,17 @@ http://192.168.111.202
 
 This will take you to the DnD Dice Roller application, where you can input the number of rolls and view the results of dice rolls.
 
+# Running with Docker
+
+The DnD Dice Roller application is also available as a Docker image on DockerHub. You can run the application using the following command:
+
+
+```
+docker run -p 80:80 alexmitev/dnd-roller0.0.1.RELEASE
+```
+
+This command maps port 80 on your local machine to port 80 on the Docker container.
+
 # Notes
 
 - The Vagrant virtual machine is provisioned with all the necessary dependencies to run the Flask application.
