@@ -14,3 +14,36 @@ python dnd_dice_roller.py
 ```
 Follow the on-screen instructions to input the number of rolls.
 The script will display the results, including the number of natural 1s, natural 20s, and the average score for advantage, disadvantage, and normal rolls.
+
+
+# UPDATE
+
+I've added the functionality to run the Dice Roller app with Vagrant+Docker. The process is automated and in order to start the app, all you need to do is as follows: 
+
+1.) Navigate to the flask directory:
+
+```
+cd DnD-Dice-Roller/flask
+```
+
+2.) Install Vagrant on your local machine. You can download it from https://www.vagrantup.com/.
+
+3.) Start the Vagrant virtual machine:
+
+```
+vagrant up
+```
+
+Once provisioning is completed, you can access the DnD Roller app in your web browser by navigating to:
+
+http://192.168.111.202
+
+This will take you to the DnD Dice Roller application, where you can input the number of rolls and view the results of dice rolls.
+
+# Notes
+
+- The Vagrant virtual machine is provisioned with all the necessary dependencies to run the Flask application.
+- If you encounter any issues during provisioning or accessing the app, please refer to the documentation or troubleshooting guides provided by Vagrant.
+- For any questions or assistance, feel free to open an issue on this repository.
+
+Enjoy rolling your virtual dice with the DnD Dice Roller app!
